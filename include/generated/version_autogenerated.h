@@ -1,4 +1,4 @@
-#define PLAIN_VERSION "2017.01-rc2-g46885bf-dirty"
+#define PLAIN_VERSION "2017.01-rc2-g04d694d-dirty"
 #define U_BOOT_VERSION "U-Boot " PLAIN_VERSION
 #define CC_VERSION_STRING "arm-none-linux-gnueabihf-gcc (GNU Toolchain for the A-profile Architecture 9.2-2019.12 (arm-9.10)) 9.2.1 20191025"
 #define LD_VERSION_STRING "GNU ld (GNU Toolchain for the A-profile Architecture 9.2-2019.12 (arm-9.10)) 2.33.1.20191209"
