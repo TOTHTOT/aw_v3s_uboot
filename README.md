@@ -6,7 +6,7 @@
 - sudo vim /etc/exports
   #添加nfs目录
   /home/yyh/Learn/aw_v3s/nfs *(rw,sync,no_root_squash)
-  
+
 - 烧写Uboot到sd指定位置
   sudo dd if=u-boot-sunxi-with-spl.bin of=/dev/sdb bs=1024 seek=8
 ```
@@ -53,7 +53,13 @@ setenv bootcmd 'setenv bootm_boot_mode sec;tftp 41000000 ./aw_v3s/zImage;tftp 41
 ## 通过nfs挂载文件系统bootargs
 
 ```shell
-setenv bootargs root=/dev/nfs nfsroot=192.168.0.101:/home/yyh/Learn/aw_v3s/nfs,nfsvers=2 rw ip=192.168.0.110:192.168.0.101:192.168.0.1:255.255.255.0::eth0:off init=/linuxrc console=ttyS0,115200
+setenv bootargs "root=/dev/nfs nfsroot=192.168.0.101:/home/yyh/Learn/aw_v3s/nfs,nfsvers=2 rw ip=192.168.0.110:192.168.0.101:192.168.0.1:255.255.255.0::eth0:off init=/linuxrc console=ttyS0,115200""
+```
+
+## 通过tf卡挂在文件系统
+
+```shell
+
 ```
 
 ## 设置PS1命令提示符
@@ -63,5 +69,3 @@ setenv bootargs root=/dev/nfs nfsroot=192.168.0.101:/home/yyh/Learn/aw_v3s/nfs,n
 ```shell
 export PS1="\[\e[32;1m\][\[\e[33;1m\]\u\[\e[31;1m\]@\[\e[33;1m\]\h \[\e[36;1m\]\w\[\e[32;1m\]]\[\e[34;1m\]\$ \[\e[0m\]"
 ```
-
-
