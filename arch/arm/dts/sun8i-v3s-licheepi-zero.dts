@@ -74,7 +74,7 @@
 };
 
 &usb_otg {
-	dr_mode = "otg";
+	dr_mode = "host";
 	status = "okay";
 };
 
@@ -93,3 +93,19 @@
     reg = <1>;
     };
 };
+
+&ohci0 {
+	dr_mode = "host";
+	status = "okay";
+};
+
+&ehci0 {
+	dr_mode = "host";
+	status = "okay";
+};
+
+/*&xhci0 {
+	dr_mode = "host";
+	status = "okay";
+};*/
+
