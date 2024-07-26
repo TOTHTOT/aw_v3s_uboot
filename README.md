@@ -1,3 +1,11 @@
+<!--
+ * @Description: 全志v3s uboot 说明
+ * @Author: TOTHTOT
+ * @Date: 2024-06-02 22:13:40
+ * @LastEditTime: 2024-07-26 18:10:32
+ * @LastEditors: TOTHTOT
+ * @FilePath: /aw_v3s_uboot/README.md
+-->
 # 全志V3s配置项
 
 ## nfs配置:
@@ -50,10 +58,16 @@ setenv bootcmd 'setenv bootm_boot_mode sec;tftp 41000000 ./aw_v3s/zImage;tftp 41
 setenv bootcmd 'setenv bootm_boot_mode sec;tftp 41000000 ./aw_v3s/zImage;tftp 41800000 ./aw_v3s/sun8i-v3s-licheepi-zero-with-1024x600-lcd.dtb;bootz 0x41000000 - 0x41800000'
 ```
 
+## 设置从tf卡启动内核和设备树
+
+```shell
+setenv bootcmd 'setenv bootm_boot_mode sec; load mmc 0:1 0x41000000 zImage; load mmc 0:1 0x41800000 sun8i-v3s-licheepi-zero-dock.dtb; bootz 0x41000000 - 0x41800000'
+```
+
 ## 通过nfs挂载文件系统bootargs
 
 ```shell
-setenv bootargs "root=/dev/nfs nfsroot=192.168.0.101:/home/yyh/Learn/aw_v3s/nfs,nfsvers=2 rw ip=192.168.0.110:192.168.0.101:192.168.0.1:255.255.255.0::eth0:off init=/linuxrc console=ttyS0,115200""
+setenv bootargs "root=/dev/nfs nfsroot=192.168.0.101:/home/yyh/Learn/aw_v3s/nfs,nfsvers=2 rw ip=192.168.0.110:192.168.0.101:192.168.0.1:255.255.255.0::eth0:off init=/linuxrc console=ttyS0,115200"
 ```
 
 ## 通过tf卡挂在文件系统
