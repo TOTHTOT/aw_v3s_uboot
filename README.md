@@ -73,7 +73,7 @@ setenv bootargs "root=/dev/nfs nfsroot=192.168.0.101:/home/yyh/Learn/aw_v3s/nfs,
 ## 通过tf卡挂在文件系统
 
 ```shell
-
+setenv bootargs "console=ttyS0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 rw rootwait"
 ```
 
 ## 设置PS1命令提示符
